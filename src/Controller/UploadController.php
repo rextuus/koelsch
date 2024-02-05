@@ -13,7 +13,7 @@ use Symfony\Component\Routing\Annotation\Route;
 
 class UploadController extends AbstractController
 {
-    #[Route('/upload', name: 'app_upload')]
+    #[Route('/upload/', name: 'app_upload')]
     public function upload(Request $request, ImageService $imageService): Response
     {
         $form = $this->createForm(ImageUploadType::class,);
