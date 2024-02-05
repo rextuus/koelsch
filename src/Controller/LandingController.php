@@ -18,14 +18,10 @@ class LandingController extends AbstractController
         ]);
     }
 
-    #[Route('/test', name: 'app_test')]
-    public function test(ImageService $imageService): Response
+    #[Route('/impressum', name: 'app_impressum')]
+    public function test(): Response
     {
-        echo phpinfo();
-        die();
-        $images = $imageService->findAll();
-        return $this->render('landing/index.html.twig', [
-            'images' => $images,
+        return $this->render('landing/impressum.html.twig', [
         ]);
     }
 }
