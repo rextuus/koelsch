@@ -50,6 +50,6 @@ class ImageService
 
     public function findAll()
     {
-        return $this->repository->findAll();
+        return $this->repository->findBy([], ['created' => 'DESC']);
     }
 }
