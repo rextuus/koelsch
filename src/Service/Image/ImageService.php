@@ -4,6 +4,7 @@ declare(strict_types=1);
 
 namespace App\Service\Image;
 
+use App\Entity\Image;
 use App\Repository\ImageRepository;
 use App\Service\Image\Form\ImageData;
 use Symfony\Component\Messenger\MessageBusInterface;
@@ -30,7 +31,7 @@ class ImageService
 
         $this->repository->save($image);
 
-        $this->bus->dispatch(new ImageUpload($image->getId()));
+//        $this->bus->dispatch(new ImageUpload($image->getId()));
 
         return $image;
     }
@@ -46,14 +47,6 @@ class ImageService
         return $this->repository->find($imageId);
     }
 
-    /**
-     * @param User $frame
-     * @return Image[]
-     */
-    public function getNewUndeliveredImagesByFrame(User $frame): array
-    {
-       return $this->repository->findNewUndeliveredImagesByFrame($frame);
-    }
 
     public function findAll()
     {

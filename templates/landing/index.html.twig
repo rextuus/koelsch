@@ -22,7 +22,7 @@
             <div class="image-card" data-src="{{ image.filePath }}">
                 <img src="{{ image.filePath }}" alt="{{ image.name }}" loading="lazy">
                 <div class="image-details">
-                    <p>{{ image.owner }}</p>
+                    <p id="name">@{{ image.owner }}</p>
                 </div>
             </div>
             {% endfor %}
@@ -53,7 +53,7 @@
 
                 modal.style.display = "block";
                 modalImg.src = this.src;
-                captionText.innerHTML = this.alt;
+                captionText.innerHTML = image.parentElement.outerText;
 
                 // Get the <span> element that closes the modal
                 var span = document.getElementsByClassName("close")[0];

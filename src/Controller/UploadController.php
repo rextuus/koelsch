@@ -29,7 +29,10 @@ class UploadController extends AbstractController
             $file->move($uploadsDirectory, $filename);
 
             $imageData = new ImageCreateData();
-            $imageData->setOwner('test');
+            $imageData->setOwner('anonymous');
+            if (array_key_exists('owner', $form->getData())){
+                $imageData->setOwner($form->getData()['owner']);
+            }
 
             $imageData->setFilePath('uploads/images/' . $filename);
 

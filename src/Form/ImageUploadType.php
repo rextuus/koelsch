@@ -19,6 +19,9 @@ class ImageUploadType extends AbstractType
                 'label' => 'Select an image',
                 'attr' => ['accept' => 'image/*'],
             ])
+            ->add('owner', TextType::class, [
+                'label' => 'Wer bist du?',
+            ])
             ->add('upload', SubmitType::class, [
                 'label' => 'Upload',
                 'attr' => ['class' => 'btn btn-primary'],

@@ -38,3 +38,10 @@ $font-size: 6em;
   font-size: $font-size;
   padding: 9px 12px;
 }
+
+.name-field{
+  margin-bottom: 15px;
+  display: flex;
+  flex-direction: column;
+  font-size: 1.5em;
+}
