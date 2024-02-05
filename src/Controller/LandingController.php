@@ -18,7 +18,7 @@ class LandingController extends AbstractController
         ]);
     }
 
-    #[Route('/test', name: 'app_home')]
+    #[Route('/test', name: 'app_test')]
     public function test(ImageService $imageService): Response
     {
         echo phpinfo();
