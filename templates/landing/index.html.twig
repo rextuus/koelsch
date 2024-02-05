@@ -6,7 +6,25 @@
 
 
     <div class="content-body">
-{#        <div id="image-list">#}
+
+        <div class="button-container">
+            <div class="button-element">
+                <a href="{{ path('app_upload') }}" class="button upload-button" aria-label="Upload">
+                    <i class="fas fa-upload"></i>
+                </a>
+                <span>Sende Grüße</span>
+            </div>
+
+            <div class="button-element">
+            <a href="/gambling" class="button gambling-button" aria-label="Gambling">
+                <i class="fas fa-dice"></i>
+            </a>
+                Welcher Kölsch-Typ bist du?
+            </div>
+        </div>
+
+
+        {#        <div id="image-list">#}
 {#            {% for image in images %}#}
 {#                <div class="image-card" data-src="{{ image.filePath }}">#}
 {#                    <img src="{{ image.cdnUrl }}" alt="{{ image.name }}" loading="lazy">#}
@@ -17,6 +35,7 @@
 {#            {% endfor %}#}
 {#        </div>#}
 
+        <p>Unsere Fans:</p>
         <div class="image-list" id="image-list">
             {% for image in images %}
             <div class="image-card" data-src="{{ image.filePath }}">

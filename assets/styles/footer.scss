@@ -4,8 +4,7 @@
 .footer{
   margin-top: auto;
   background: $color-footer-background;
-  color: rgba(255, 255, 255, .5);
-  color: black;
+  color: $color-body-main;
 }
 .footer-element{
   font-weight: bold;
@@ -45,9 +44,9 @@
   flex-direction: column;
   align-items: center;
   text-align: center;
-  color: rgba(255, 255, 255, .5);
+  color: $color-footer-text-header;
   h3{
-    color: $color-footer-text-header;
+    color: $color-body-main;
     font-size: $text-9;
 
   }
