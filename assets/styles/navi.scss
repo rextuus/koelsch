@@ -1,0 +1,9 @@
+@import "variables";
+
+.banner {
+  background-color: $color-footer-background-upper-part;
+  padding: 10px;
+  text-align: center;
+  font-size: 1.0em;
+  color: $color-footer-text-header;
+}

@@ -54,4 +54,9 @@ class ImageService
     {
        return $this->repository->findNewUndeliveredImagesByFrame($frame);
     }
+
+    public function findAll()
+    {
+        return $this->repository->findAll();
+    }
 }

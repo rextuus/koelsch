@@ -1,19 +1,138 @@
 {% extends 'base.html.twig' %}
 
-{% block title %}Event Dashboard{% endblock %}
+{% block title %}Dat koelsch Dreijestirn{% endblock %}
 
 {% block body %}
-    <div class="page-header">
-        <div class="page-header-text">
-            Events
-        </div>
-        <div class="page-header-image">
-            <img src="{{ asset('assets/img/registration.svg') }}" alt="Tile image">
-        </div>
-    </div>
 
 
     <div class="content-body">
-Hallo
+{#        <div id="image-list">#}
+{#            {% for image in images %}#}
+{#                <div class="image-card" data-src="{{ image.filePath }}">#}
+{#                    <img src="{{ image.cdnUrl }}" alt="{{ image.name }}" loading="lazy">#}
+{#                    <div class="image-details">#}
+{#                        <p>{{ image.owner }}</p>#}
+{#                    </div>#}
+{#                </div>#}
+{#            {% endfor %}#}
+{#        </div>#}
+
+        <div class="image-list" id="image-list">
+            {% for image in images %}
+            <div class="image-card" data-src="{{ image.filePath }}">
+                <img src="{{ image.filePath }}" alt="{{ image.name }}" loading="lazy">
+                <div class="image-details">
+                    <p>{{ image.owner }}</p>
+                </div>
+            </div>
+            {% endfor %}
+        </div>
+
+        <div id="myModal" class="modal">
+            <span class="close">&times;</span>
+            <img class="modal-content" id="img01">
+            <div id="caption"></div>
+        </div>
+
+
     </div>
+    <script>
+
+        var modal = document.getElementById("myModal");
+
+        var images = document.querySelectorAll(".image-card img");
+
+        // Get the image and insert it inside the modal - use its "alt" text as a caption
+        images.forEach(function(image) {
+            image.onclick = function() {
+                // Get the image and insert it inside the modal - use its "alt" text as a caption
+
+                var modalImg = document.getElementById("img01");
+                var captionText = document.getElementById("caption");
+
+
+                modal.style.display = "block";
+                modalImg.src = this.src;
+                captionText.innerHTML = this.alt;
+
+                // Get the <span> element that closes the modal
+                var span = document.getElementsByClassName("close")[0];
+
+                // When the user clicks on <span> (x), close the modal
+                span.onclick = function() {
+                    modal.style.display = "none";
+                }
+            };
+        });
+
+
+
+
+
+
+        // document.addEventListener('DOMContentLoaded', function() {
+        //     const imageCards = document.querySelectorAll('.image-card');
+        //
+        //     function lazyLoadImage(imageCard) {
+        //         const image = imageCard.querySelector('img');
+        //         const src = imageCard.getAttribute('data-src');
+        //         if (src) {
+        //             image.setAttribute('src', src);
+        //             image.onload = function() {
+        //                 image.removeAttribute('data-src');
+        //             };
+        //         }
+        //     }
+        //
+        //     function handleIntersection(entries) {
+        //         entries.forEach(entry => {
+        //             if (entry.intersectionRatio > 0) {
+        //                 lazyLoadImage(entry.target);
+        //             }
+        //         });
+        //     }
+        //
+        //     const observer = new IntersectionObserver(handleIntersection, {
+        //         root: null,
+        //         rootMargin: '0px',
+        //         threshold: 0.5
+        //     });
+        //
+        //     imageCards.forEach(imageCard => {
+        //         observer.observe(imageCard);
+        //     });
+        //
+        //     function showImageInModal(imageSrc) {
+        //         const modal = document.createElement('div');
+        //         modal.classList.add('modal');
+        //         modal.innerHTML = `
+        //     <div class="modal-content">
+        //         <span class="close">&times;</span>
+        //         <img src="${imageSrc}" alt="Image">
+        //     </div>
+        // `;
+        //
+        //         document.body.appendChild(modal);
+        //
+        //         const closeButton = modal.querySelector('.close');
+        //         closeButton.addEventListener('click', function() {
+        //             document.body.removeChild(modal);
+        //         });
+        //
+        //         const modalContent = modal.querySelector('.modal-content');
+        //         modalContent.addEventListener('click', function() {
+        //             document.body.removeChild(modal);
+        //         });
+        //     }
+        //
+        //     imageCards.forEach(imageCard => {
+        //         const image = imageCard.querySelector('img');
+        //         image.addEventListener('click', function() {
+        //             const src = this.getAttribute('src');
+        //             showImageInModal(src);
+        //         });
+        //     });
+        // });
+
+    </script>
 {% endblock %}
