@@ -1,0 +1,73 @@
+// body
+$max-width: 1000px;
+$color-body-main: #113133;
+$color-body-diff: #04484f;
+$color-font-default: #cccccc;
+
+// header
+$color-header-main: #171717;
+$size-page-header-image: 30px;
+$size-page-header-image-2: 25px;
+$color-page-header-default: #cccccc;
+
+// tab-navi
+$color-navi-tab-button-inactive: $color-body-diff;
+$color-navi-tab-button-active: $color-header-main;
+$color-navi-tab-button-active-font: $color-font-default;
+
+
+// navi
+$color-navi-main: #232323;
+$color-navi-secondary: #cccccc;
+$color-navi-collapses-background: #0a0a0a;
+$size-navi-height: 90px;
+
+// footer
+$color-footer-background: #5d5d5d;
+$color-footer-background-upper-part: #171717;
+$color-footer-background-lower-part: #232323;
+$color-footer-text-alternative: #a86464;
+$color-footer-text-header: #f1f1f1;
+
+// form
+$color-form-default-background: #424243;
+$color-form-field-font-label: #2d2d2d;
+$color-form-field-font-active: #000000;
+$color-form-field-font-disabled: $color-form-field-font-label;
+$color-form-field-background: #194d54;
+$color-form-deny-button: #c04545;
+$color-form-switch-background: #c04545;
+$color-form-switch-background-checked: #0c6903;
+
+//distance
+$default-size-xxs: 2px;
+$default-size-xs: 3px;
+$default-size-s: 5px;
+$default-size-m: 8px;
+$default-size-l: 10px;
+$default-size-xl: 20px;
+$default-size-xxl: 30px;
+
+//border
+$default-border-radius: 8px;
+
+//text
+$text-18: 1.8em;
+$text-13: 1.3em;
+$text-10: 1.0em;
+$text-9: 0.9em;
+$text-8: 0.8em;
+$text-7: 0.7em;
+$text-6: 0.6em;
+
+// images sizes
+$home-button-img-size: 35px;
+$loan-debt-switch-img-size: 25px;
+$navi-favicon-size: 82px;
+$footer-company-logo-size: 50px;
+
+$shortcut-img-size: calc(12.5% - 20px);
+
+// default elements
+$color-default-border: #424243;
+$size-default-border: 1px;
