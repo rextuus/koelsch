@@ -37,6 +37,8 @@ class UploadController extends AbstractController
             $imageData->setFilePath('uploads/images/' . $filename);
 
             $imageService->createByData($imageData);
+
+            return $this->redirect($this->generateUrl('app_home'));
         }
 
         return $this->render('upload_form.html.twig', [
