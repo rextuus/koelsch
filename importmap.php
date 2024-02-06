@@ -27,4 +27,7 @@ return [
     '@hotwired/turbo' => [
         'version' => '7.3.0',
     ],
+    'js-confetti' => [
+        'version' => '0.12.0',
+    ],
 ];

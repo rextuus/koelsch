@@ -1,0 +1,54 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Dat koelsch Dreijestirn{% endblock %}
+
+{% block body %}
+
+
+    <div class="content-body">
+        <div id="randomSetContainer">
+            <img class="hidden" id="winnerImage" src="{{ randomSet.winnerImage.imageUrl }}" alt="Winner Image">
+            {% for looserImage in randomSet.looserImages %}
+                <img class="hidden looserImage" id="looserImage{{ loop.index }}" src="{{ looserImage.imageUrl }}" alt="">
+
+            {% endfor %}
+
+            <div id="winner-overlay" class="winner-overlay hidden {{ randomSet.winnerClass }}">
+                {{ randomSet.text.content|raw }}
+            </div>
+        </div>
+
+        <div id="statistic-panel" class="statistic-panel hidden {{ randomSet.winnerClass }}">
+            <div class="statistic-panel-tale">
+                <div id="amount-gaffel" class="amount">
+                    {{ randomSet.totalGaffel }}
+                </div>
+                <div class="logo">
+                    <img src="{{ asset('image/gaffel.png') }}">
+                </div>
+            </div>
+            <div class="statistic-panel-tale">
+                <div id="amount-reisi" class="amount">
+                    {{ randomSet.totalReisi }}
+                </div>
+                <div class="logo">
+                    <img src="{{ asset('image/reisi.png') }}">
+
+                </div>
+            </div>
+            <div class="statistic-panel-tale">
+                <div id="amount-frueh" class="amount">
+                    {{ randomSet.totalFrueh }}
+                </div>
+                <div class="logo">
+                    <img src="{{ asset('image/frueh.png') }}">
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+
+
+    </script>
+{% endblock %}

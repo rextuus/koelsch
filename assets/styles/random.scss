@@ -1,0 +1,109 @@
+#randomSetContainer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative; /* Add relative positioning to the container */
+  .hidden{
+    display: none;
+  }
+
+  margin-top: 15px;
+  border: #0a0a0a solid 3px;
+  padding: 2px;
+}
+
+img {
+  max-width: 100%; /* Set images to half the width */
+  height: auto;
+}
+
+.overlay-container {
+  position: relative; /* Set position to relative */
+}
+
+.winner-overlay {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background-color: rgba(255, 255, 255, 0.8); /* Adjust opacity as needed */
+  padding: 10px;
+  border-radius: 5px;
+  color: #1e1e1e;
+  font-size: 2.0em;
+
+  .beer{
+    font-size: 3.0em;
+    font-weight: bold;
+    background: black;
+    padding: 1px;
+    color: #ffffff;
+    border-radius: 8px;
+
+  }
+
+  &.gaffel{
+    .beer{
+      background: #04048a;
+    }
+  }
+  &.reisi{
+    .beer{
+      background: #640000;
+    }
+  }
+  &.frueh{
+    .beer{
+      background: #e50000;
+    }
+  }
+}
+
+
+.blink {
+  animation: blink-animation 1s step-end infinite;
+}
+
+@keyframes blink-animation {
+  50% {
+    opacity: 0;
+  }
+}
+
+.statistic-panel{
+
+
+  &.hidden{
+    display: none;
+  }
+
+  margin-top: 10px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  .statistic-panel-tale{
+    display: flex;
+    flex-direction: column;
+
+    margin-left: 20px;
+    margin-right: 20px;
+
+    font-size: 1.5em;
+    font-weight: bold;
+
+    justify-content: center;
+
+    .amount{
+      margin-bottom: 3px;
+    }
+
+    .logo{
+      justify-content: center;
+
+      max-height: 60px;
+      max-width: 20px;
+    }
+  }
+}
+
