@@ -20,7 +20,8 @@ class ImageService
     public function __construct(
         private ImageRepository $repository,
         private ImageFactory $factory,
-        private MessageBusInterface $bus
+        private MessageBusInterface $bus,
+        private bool $cdnUploadEnable
     )
     {
     }
@@ -32,7 +33,9 @@ class ImageService
 
         $this->repository->save($image);
 
-//        $this->bus->dispatch(new ImageUpload($image->getId()));
+        if ($this->cdnUploadEnable){
+            $this->bus->dispatch(new ImageUpload($image->getId()));
+        }
 
         return $image;
     }
