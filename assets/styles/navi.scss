@@ -9,10 +9,21 @@
   color: $color-body-main;
   margin-bottom: 10px;
 
+  border-bottom: solid 5px black;
 
-  a{
-    text-decoration:none;
-    color: $color-body-main;
-    font-size: 1.5em;
+  display: flex;
+
+  .header-image{
+    max-width: 50px;
+    max-height: 50px;
   }
+
+  .header-link{
+    a{
+      text-decoration:none;
+      color: $color-body-main;
+      font-size: 1.5em;
+    }
+  }
+
 }
