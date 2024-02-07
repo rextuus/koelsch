@@ -176,3 +176,36 @@ body{
 
 
 
+.pagination{
+    background: $color-font-default;
+    color: $color-body-main;
+    padding: 15px;
+    margin-bottom: 10px;
+    font-size: 1.4em;
+    .first{
+        margin-right: 15px;
+    }
+    .previous{
+        margin-right: 15px;
+    }
+    .current{
+        margin-right: 15px;
+        font-size: 1.6em;
+    }
+    .page{
+        margin-right: 15px;
+    }
+    .next{
+        margin-right: 15px;
+    }
+    .last{
+        margin-right: 15px;
+    }
+}
+.archive-link{
+    text-decoration: none;
+    color: black;
+    font-size: 1.3em;
+    padding: 5px;
+    border: 1px solid black;
+}

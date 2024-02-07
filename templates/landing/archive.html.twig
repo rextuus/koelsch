@@ -7,38 +7,20 @@
 
     <div class="content-body">
 
-        <div class="button-container">
-            <div class="button-element">
-                <a href="{{ path('app_upload') }}" class="button upload-button" aria-label="Upload">
-                    <i class="fas fa-upload"></i>
-                </a>
-                <span>Sende Grüße</span>
-            </div>
-
-            <div class="button-element">
-            <a href="/gambling" class="button gambling-button" aria-label="Gambling">
-                <i class="fas fa-dice"></i>
-            </a>
-                Welcher Kölsch-Typ bist du?
-            </div>
-        </div>
-
-
-        <p>Unsere Fans:</p>
+        {# templates/image/index.html.twig #}
+        <h1>Archive</h1>
         <div class="image-list" id="image-list">
-            {% for image in images %}
-            <div class="image-card" data-src="{{ image.path }}">
-                <img src="{{ image.path }}" alt="{{ image.name }}" loading="lazy">
-                <div class="image-details">
-                    <p id="name">@{{ image.owner }}</p>
-                </div>
-            </div>
-            {% endfor %}
 
-            {% if images|length == 10 %}
-                <a class="archive-link" href="{{ path('app_archive') }}">Zum Archiv</a>
-            {% endif %}
+                {% for image in images %}
+                    <div class="image-card" data-src="{{ image.path }}">
+                        <img src="{{ image.path }}" alt="{{ image.name }}" loading="lazy">
+                        <div class="image-details">
+                            <p id="name">@{{ image.owner }}</p>
+                        </div>
+                    </div>
+                {% endfor %}
         </div>
+
 
         <div id="myModal" class="modal">
             <span class="close">&times;</span>
@@ -46,7 +28,13 @@
             <div id="caption"></div>
         </div>
 
+            {{ knp_pagination_render(images) }}
+
+
+
+
     </div>
+
     <script>
 
         var modal = document.getElementById("myModal");

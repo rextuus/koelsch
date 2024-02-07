@@ -159,4 +159,12 @@ class Image
 
         return $this;
     }
+
+    public function getPath(): ?string
+    {
+        if (!$this->getCdnUrl()){
+            return $this->filePath;
+        }
+        return $this->cdnUrl;
+    }
 }

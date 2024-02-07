@@ -5,6 +5,7 @@ declare(strict_types=1);
 namespace App\Service\Image;
 
 use App\Entity\Image;
+use App\Message\ImageUpload;
 use App\Repository\ImageRepository;
 use App\Service\Image\Form\ImageData;
 use Symfony\Component\Messenger\MessageBusInterface;
@@ -50,6 +51,6 @@ class ImageService
 
     public function findAll()
     {
-        return $this->repository->findBy([], ['created' => 'DESC']);
+        return $this->repository->findBy([], ['created' => 'DESC'], 10);
     }
 }
