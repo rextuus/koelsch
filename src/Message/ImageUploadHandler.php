@@ -34,6 +34,7 @@ class ImageUploadHandler
         if ($result) {
             $infos = $result->getArrayCopy();
             $url = $infos['secure_url'];
+            $url = str_replace('/upload/', '/upload/q_auto/', $url);
 
             $updateData = (new ImageData())->initFrom($image);
             $updateData->setCdnUrl($url);
