@@ -21,7 +21,7 @@ class ImageCrudController extends AbstractCrudController
     {
 //        new EntityDto();
         return [
-            IdField::new('id'),
+//            IdField::new('id'),
             ImagePreviewField::new('filePath'),
             ImagePreviewField::new('cdnUrl'),
         ];
